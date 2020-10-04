@@ -67,4 +67,13 @@ StartLimitBurst=10
 WantedBy=multi-user.target
 ```
 
+<h5>Restrict file availability</H5>
 
+* spark_users - group that has read access to archive data
+* spark_writer - a sole user that can write archive data
+
+<H5>HW restriction</H5>
+
+<H5>Restrict Spark availability</H5>
+
+* setup cluster secret key
