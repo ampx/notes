@@ -42,6 +42,7 @@ StartLimitBurst=10
 [Install]
 WantedBy=multi-user.target
 ```
+systemctl daemon-reload
 
 <H5>create spark service on slave slave node</H5>
 create file with following content /etc/systemd/system/spark_worker.service
