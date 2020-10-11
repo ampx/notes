@@ -13,7 +13,7 @@ create file with following content /etc/profile.d/spark.sh
 
 ```
 export JAVA_HOME=<path-of-Java-installation>
-#example JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.252.b09-2.el8_1.x86_64/
+#example export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.252.b09-2.el8_1.x86_64/
 export SPARK_HOME=/opt/spark/
 export PATH=$PATH:$SPARK_HOME/bin
 ```
