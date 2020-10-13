@@ -115,3 +115,11 @@ chgrp -R spark_user /data/archive/
 <H5>Restrict Spark availability</H5>
 
 * setup cluster secret key
+
+```
+cp /opt/spark/conf/spark-defaults.conf /opt/spark/conf/spark.conf
+vi /opt/spark/conf/spark.conf
+```
+
+set unique secret key on spark.authenticate.secret
+Note:this option will also needs to be set in application sparkcontext 
