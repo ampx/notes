@@ -69,7 +69,10 @@ WantedBy=multi-user.target
 ```
 
 <H5>reload services</H5>
+
+```
 systemctl daemon-reload
+```
 
 <H5>add users</H5>
 
@@ -105,12 +108,9 @@ chown -R spark_user /data/archive/
 chgrp -R spark_user /data/archive/
 ```
 
-<h5>Restrict file availability</H5>
-
-* spark_users - group that has read access to archive data
-* spark_writer - a sole user that can write archive data
-
 <H5>HW restriction</H5>
+
+* Restrict access to the VM to spark users only
 
 <H5>Restrict Spark availability</H5>
 
