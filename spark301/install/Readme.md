@@ -112,14 +112,23 @@ chgrp -R spark_user /data/archive/
 
 * Restrict access to the VM to spark users only
 
-<H5>Restrict Spark availability</H5>
-
-* setup cluster secret key
+<H5>Spark internal configurations</H5>
 
 ```
 cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
 vi /opt/spark/conf/spark-defaults.conf
 ```
 
-set unique secret key on spark.authenticate.secret
+* setup cluster secret key
+
+```
+spark.authenticate.secret someSecretKey
+```
 Note:this option will also needs to be set in application sparkcontext 
+
+<H5>Spark environment variables configurations</H5>
+
+```
+cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
+vi /opt/spark/conf/spark-defaults.conf
+```
