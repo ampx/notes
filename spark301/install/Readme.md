@@ -8,22 +8,6 @@ tar -xvzf ./spark-3.0.1-bin-hadoop2.7.tgz
 ln -s spark-3.0.1-bin-hadoop2.7/ spark
 ```
 
-<H5>add users</H5>
-
-```
-#add application  user
-useradd -M spark
-usermod -L spark
-chown -R spark spark*
-chgrp -R spark spark*
-
-#add spark write user
-useradd spark_writer
-
-#add general excecution user
-useradd spark_reader
-```
-
 <H5>configure paths for all the users</H5>
 create file with following content /etc/profile.d/spark.sh
 
@@ -58,8 +42,10 @@ StartLimitBurst=10
 [Install]
 WantedBy=multi-user.target
 ```
+
+<H5>reload services</H5>
 systemctl daemon-reload
-sudo systemctl daemon-reload
+
 
 <H5>create spark service on slave slave node</H5>
 create file with following content /etc/systemd/system/spark_worker.service
@@ -84,6 +70,38 @@ StartLimitBurst=10
  
 [Install]
 WantedBy=multi-user.target
+```
+
+<H5>add users</H5>
+
+```
+#add application  user
+useradd -M spark
+usermod -L spark
+chown -R spark /opt/spark*
+chgrp -R spark /opt/spark*
+
+#add spark write user
+useradd spark_writer
+
+#add general excecution user
+useradd spark_reader
+```
+
+<H5>add users</H5>
+
+```
+#add application  user
+useradd -M spark
+usermod -L spark
+chown -R spark spark*
+chgrp -R spark spark*
+
+#add spark write user
+useradd spark_writer
+
+#add general excecution user
+useradd spark_reader
 ```
 
 <h5>Restrict file availability</H5>
