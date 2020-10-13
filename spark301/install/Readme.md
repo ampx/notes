@@ -31,8 +31,8 @@ After=network-online.target
 [Service]
 User=spark
 Type=forking
-ExecStart=/opt/spark/sbin/start-all.sh
-ExecStop=/opt/spark/sbin/stop-all.sh
+ExecStart=/opt/spark/sbin/start-master.sh
+ExecStop=/opt/spark/sbin/stop-master.sh
 TimeoutSec=30
 Restart= on-failure
 RestartSec=30
@@ -42,10 +42,6 @@ StartLimitBurst=10
 [Install]
 WantedBy=multi-user.target
 ```
-
-<H5>reload services</H5>
-systemctl daemon-reload
-
 
 <H5>create spark service on slave slave node</H5>
 create file with following content /etc/systemd/system/spark_worker.service
@@ -72,6 +68,9 @@ StartLimitBurst=10
 WantedBy=multi-user.target
 ```
 
+<H5>reload services</H5>
+systemctl daemon-reload
+
 <H5>add users</H5>
 
 ```
@@ -85,23 +84,25 @@ chgrp -R spark /opt/spark*
 useradd spark_writer
 
 #add general excecution user
-useradd spark_reader
+useradd spark_user
 ```
 
-<H5>add users</H5>
+<H5>add data directories</H5>
 
 ```
-#add application  user
-useradd -M spark
-usermod -L spark
-chown -R spark spark*
-chgrp -R spark spark*
+su
+mkdir /data/
+mkdir /data/rawdata/
+chown -R spark_user /data/archive/
+chgrp -R spark_user /data/archive/
 
-#add spark write user
-useradd spark_writer
+mkdir /data/archive/
+chown -R spark_writer /data/archive/
+chgrp -R spark_writer /data/archive/
 
-#add general excecution user
-useradd spark_reader
+mkdir /data/tmp/
+chown -R spark_user /data/archive/
+chgrp -R spark_user /data/archive/
 ```
 
 <h5>Restrict file availability</H5>
