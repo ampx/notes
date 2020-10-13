@@ -9,6 +9,7 @@ ln -s spark-3.0.1-bin-hadoop2.7/ spark
 ```
 
 <H5>add users</H5>
+
 ```
 #add application  user
 useradd -M spark
