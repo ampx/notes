@@ -117,8 +117,8 @@ chgrp -R spark_user /data/archive/
 * setup cluster secret key
 
 ```
-cp /opt/spark/conf/spark-defaults.conf /opt/spark/conf/spark.conf
-vi /opt/spark/conf/spark.conf
+cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
+vi /opt/spark/conf/spark-defaults.conf
 ```
 
 set unique secret key on spark.authenticate.secret
