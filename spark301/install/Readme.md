@@ -8,6 +8,21 @@ tar -xvzf ./spark-3.0.1-bin-hadoop2.7.tgz
 ln -s spark-3.0.1-bin-hadoop2.7/ spark
 ```
 
+<H5>add users</H5>
+```
+#add application  user
+useradd -M spark
+usermod -L spark
+chown -R spark spark*
+chgrp -R spark spark*
+
+#add spark write user
+useradd spark_writer
+
+#add general excecution user
+useradd spark_reader
+```
+
 <H5>configure paths for all the users</H5>
 create file with following content /etc/profile.d/spark.sh
 
