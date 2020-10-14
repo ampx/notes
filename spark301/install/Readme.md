@@ -129,6 +129,6 @@ Note:this option will also needs to be set in application sparkcontext
 <H5>Spark environment variables configurations</H5>
 
 ```
-cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
-vi /opt/spark/conf/spark-defaults.conf
+cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
+vi /opt/spark/conf/spark-env.sh
 ```
