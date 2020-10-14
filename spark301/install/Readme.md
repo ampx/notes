@@ -138,8 +138,11 @@ cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
 vi /opt/spark/conf/spark-env.sh
 ```
 
-<H5>setup open ports</H5>
+<H5>Port Setup</H5>
+Open firewall or following ports:
 
 Port|Description
 ---|---
 7077|Master
+8080|Monitoring Spark
+8081|Monitoring Job
