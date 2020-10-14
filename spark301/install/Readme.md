@@ -88,6 +88,9 @@ useradd spark_writer
 
 #add general excecution user
 useradd spark_user
+
+#spark_writer should have privalages of spark_user
+usermod -a -G spark_user spark_writer
 ```
 
 <H5>add data directories</H5>
