@@ -96,16 +96,16 @@ useradd spark_user
 su
 mkdir /data/
 mkdir /data/rawdata/
-chown -R spark_user /data/archive/
-chgrp -R spark_user /data/archive/
+chown -R spark_user /data/rawdata/
+chgrp -R spark_user /data/rawdata/
 
 mkdir /data/archive/
 chown -R spark_writer /data/archive/
 chgrp -R spark_writer /data/archive/
 
 mkdir /data/tmp/
-chown -R spark_user /data/archive/
-chgrp -R spark_user /data/archive/
+chown -R spark_user /data/tmp/
+chgrp -R spark_user /data/tmp/
 ```
 
 <H5>HW restriction</H5>
