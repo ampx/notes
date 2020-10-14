@@ -137,3 +137,9 @@ Note:this option will also needs to be set in application sparkcontext
 cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
 vi /opt/spark/conf/spark-env.sh
 ```
+
+<H5>setup open ports</H5>
+
+Port|Description
+---|---
+7077|Master
