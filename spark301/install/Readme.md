@@ -45,6 +45,7 @@ WantedBy=multi-user.target
 
 <H5>create spark service on slave slave node</H5>
 create file with following content /etc/systemd/system/spark_worker.service
+replace IP '01.02.03.04' with master IP address
 
 ```
 [Unit]
@@ -56,7 +57,7 @@ After=network-online.target
 [Service]
 User=spark
 Type=forking
-ExecStart=/opt/spark/sbin/start-slave.sh
+ExecStart=/opt/spark/sbin/start-slave.sh spark://01.02.03.04:7077
 ExecStop=/opt/spark/sbin/stop-slave.sh
 TimeoutSec=30
 Restart= on-failure
