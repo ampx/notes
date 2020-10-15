@@ -1,3 +1,5 @@
+![spark stand alone diagram](https://github.com/ampx/SparkStandalone/blob/main/spark301/install/stand_alone_spark.png)
+
 <H1>Installing Spark</H1>
 
 ```
