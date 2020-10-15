@@ -1,6 +1,58 @@
+<H1>Setting up Spark server</H1>
+
 ![spark stand alone diagram](https://github.com/ampx/SparkStandalone/blob/main/spark301/install/stand_alone_spark.png)
 
-<H1>Installing Spark</H1>
+<H2>System setup</H2>
+<H5>add users</H5>
+* Restrict access to the VM to spark users only
+```
+#add application  user
+useradd -M spark
+usermod -L spark
+chown -R spark /opt/spark*
+chgrp -R spark /opt/spark*
+
+#add spark write user
+useradd spark_writer
+
+#add general excecution user
+useradd spark_user
+
+#spark_writer should have privalages of spark_user
+usermod -a -G spark_user spark_writer
+```
+
+<H5>add data directories</H5>
+
+```
+su
+mkdir /data/
+mkdir /data/rawdata/
+chown -R spark_user /data/rawdata/
+chgrp -R spark_user /data/rawdata/
+chmod g+wx /data/rawdata/
+
+mkdir /data/archive/
+chown -R spark_writer /data/archive/
+chgrp -R spark_writer /data/archive/
+
+mkdir /data/tmp/
+chown -R spark_user /data/tmp/
+chgrp -R spark_user /data/tmp/
+chmod g+wx /data/tmp/
+```
+
+<H5>Port Setup</H5>
+Open firewall or following ports:
+
+Port|Description
+---|---
+7077|Master
+8080|Monitoring Spark
+8081|Monitoring Job
+
+
+<H2>Installing Spark</H2>
 
 ```
 su 
@@ -77,49 +129,6 @@ WantedBy=multi-user.target
 systemctl daemon-reload
 ```
 
-<H5>add users</H5>
-
-```
-#add application  user
-useradd -M spark
-usermod -L spark
-chown -R spark /opt/spark*
-chgrp -R spark /opt/spark*
-
-#add spark write user
-useradd spark_writer
-
-#add general excecution user
-useradd spark_user
-
-#spark_writer should have privalages of spark_user
-usermod -a -G spark_user spark_writer
-```
-
-<H5>add data directories</H5>
-
-```
-su
-mkdir /data/
-mkdir /data/rawdata/
-chown -R spark_user /data/rawdata/
-chgrp -R spark_user /data/rawdata/
-chmod g+wx /data/rawdata/
-
-mkdir /data/archive/
-chown -R spark_writer /data/archive/
-chgrp -R spark_writer /data/archive/
-
-mkdir /data/tmp/
-chown -R spark_user /data/tmp/
-chgrp -R spark_user /data/tmp/
-chmod g+wx /data/tmp/
-```
-
-<H5>HW restriction</H5>
-
-* Restrict access to the VM to spark users only
-
 <H5>Spark internal configurations</H5>
 
 ```
@@ -140,12 +149,3 @@ Note:this option will also needs to be set in application sparkcontext
 cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
 vi /opt/spark/conf/spark-env.sh
 ```
-
-<H5>Port Setup</H5>
-Open firewall or following ports:
-
-Port|Description
----|---
-7077|Master
-8080|Monitoring Spark
-8081|Monitoring Job
