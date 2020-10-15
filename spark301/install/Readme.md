@@ -26,7 +26,7 @@ usermod -a -G spark_user spark_writer
 ```
 
 <H5>add data directories</H5>
-
+add following directories to shared storage
 ```
 su
 mkdir /data/
