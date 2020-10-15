@@ -156,6 +156,6 @@ Note:this option will also needs to be set in application sparkcontext
 <H5><s>Spark environment variables configurations</s></H5>
 
 ```
-<s>cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh</s>
-<s>vi /opt/spark/conf/spark-env.sh</s>
+cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
+vi /opt/spark/conf/spark-env.sh
 ```
