@@ -3,19 +3,22 @@
 ![spark stand alone diagram](https://github.com/ampx/SparkStandalone/blob/main/spark301/install/stand_alone_spark.png)
 
 <H2>System setup</H2>
+
 <H5>add users</H5>
+
 * Restrict access to the VM to spark users only
+
 ```
 #add application  user
 useradd -M spark
 usermod -L spark
-chown -R spark /opt/spark*
-chgrp -R spark /opt/spark*
 
 #add spark write user
+#or create spark_writer group and add aproproate users
 useradd spark_writer
 
 #add general excecution user
+#or create spark_user group and add aproprate users
 useradd spark_user
 
 #spark_writer should have privalages of spark_user
@@ -60,6 +63,9 @@ cd /opt
 wget http://mirror.cc.columbia.edu/pub/software/apache/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz
 tar -xvzf ./spark-3.0.1-bin-hadoop2.7.tgz
 ln -s spark-3.0.1-bin-hadoop2.7/ spark
+#make spark user the owner of the spark app
+chown -R spark /opt/spark*
+chgrp -R spark /opt/spark*
 ```
 
 <H5>configure paths for all the users</H5>
@@ -70,6 +76,8 @@ export JAVA_HOME=<path-of-Java-installation>
 #example export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.252.b09-2.el8_1.x86_64/
 export SPARK_HOME=/opt/spark/
 export PATH=$PATH:$SPARK_HOME/bin
+export PYTHONPATH = $SPARK_HOME/python:$PYTHONPATH
+export PYSPARK_PYTHON=python3
 ```
 
 <H5>create spark service on master node</H5>
