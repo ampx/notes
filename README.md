@@ -1,9 +1,6 @@
 # SparkStandalone
-* download prepared CentOS VM:
 
-```
-https://drive.google.com/drive/folders/1HnkGb1gGYEP-X6EOwdHWeYhvxBD-yIUN?usp=sharing
-```
+* [download](https://drive.google.com/drive/folders/1HnkGb1gGYEP-X6EOwdHWeYhvxBD-yIUN?usp=sharing) prepared CentOS VM:
 
 <H1>Included Tools</H1>
 
