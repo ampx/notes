@@ -159,3 +159,12 @@ Note:this option will also needs to be set in application sparkcontext
 cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
 vi /opt/spark/conf/spark-env.sh
 ```
+
+<H5>Check that Spark starts</H5>
+
+```
+systemctl start spark_master.service
+ps -ef | grep spark
+
+#should see one instance of SparkMaster running
+```
