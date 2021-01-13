@@ -149,6 +149,7 @@ vi /opt/spark/conf/spark-defaults.conf
 * setup cluster secret key
 
 ```
+spark.authenticate true
 spark.authenticate.secret someSecretKey
 ```
 Note:this option will also needs to be set in application sparkcontext 
@@ -160,11 +161,20 @@ cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
 vi /opt/spark/conf/spark-env.sh
 ```
 
-<H5>Check that Spark starts</H5>
+<H5>Starting Spark Master</H5>
 
 ```
 systemctl start spark_master.service
 ps -ef | grep spark
 
-#should see one instance of SparkMaster running
+#should see one instance of Master running
+```
+
+to run a master and worker on a single node also start the worker node on the master server
+
+```
+systemctl start spark_worker.service
+ps -ef | grep spark
+
+#should see one instance of Master and one instance of Worker running
 ```
