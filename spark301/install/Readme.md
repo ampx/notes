@@ -178,3 +178,14 @@ ps -ef | grep spark
 
 #should see one instance of Master and one instance of Worker running
 ```
+
+MongoDb connector
+install following jars on spark instance:
+* bson-4.1.1.jar
+* mongodb-driver-sync-4.1.1.jar
+* mongodb-driver-core-4.1.1.jar
+* mongo-spark-connector_2.12-3.0.0.jar
+
+MySql Connector
+intall following jars on spark instance:
+* mysql-connector-java-5.1.48.jar
