@@ -1,5 +1,9 @@
 # SparkStandalone
 
+<H1>System Overview</H1>
+
+![Architecture Overview](https://github.com/ampx/SparkStandalone/blob/main/ArchOverview.PNG)
+
 * [download](https://drive.google.com/drive/folders/1HnkGb1gGYEP-X6EOwdHWeYhvxBD-yIUN?usp=sharing) prepared CentOS VM:
 
 <H1>Included Tools</H1>
