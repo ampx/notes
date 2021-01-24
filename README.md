@@ -3,6 +3,7 @@
 <H1>System Overview</H1>
 
 ![Architecture Overview](https://github.com/ampx/SparkStandalone/blob/main/ArchOverview.PNG)
+![Architecture Overview](https://github.com/ampx/SparkStandalone/blob/main/ArchOverview2.PNG)
 
 * [download](https://drive.google.com/drive/folders/1HnkGb1gGYEP-X6EOwdHWeYhvxBD-yIUN?usp=sharing) prepared CentOS VM:
 
