@@ -187,5 +187,5 @@ install following jars on spark instance:
 * mongo-spark-connector_2.12-3.0.0.jar
 
 MySql Connector
-intall following jars on spark instance:
+install following jars on spark instance:
 * mysql-connector-java-5.1.48.jar

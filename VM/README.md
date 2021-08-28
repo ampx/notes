@@ -1,0 +1,1 @@
+* [download](https://drive.google.com/drive/folders/1HnkGb1gGYEP-X6EOwdHWeYhvxBD-yIUN?usp=sharing) prepared CentOS VM:
